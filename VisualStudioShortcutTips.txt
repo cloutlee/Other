@@ -1,0 +1,25 @@
+Ctrl + k, d
+Ctrl + j
+F12 or mouse left
+Ctrl + -		向後導覽
+Ctrl + g
+Ctrl + f
+Ctrl + k, c
+Ctrl + k, u
+Ctrl + tab
+F5
+Ctrl + Alt + b		show BreakPoints
+Ctrl + Alt + o		output
+Ctrl + Alt + l		soluction explorer
+Ctrl + Alt + Q		快速監看
+Ctrl + Shift + F9	刪除所有中斷點
+Ctrl + \, e			error list
+Ctrl + l			delete line
+Ctrl + F4			關閉使用中的文件
+Alt + up or down	move line up or down
+Alt + mouse left
+Shift + F12		尋找所有參考
+Ctrl + m, o		折迭至定義
+Ctrl + m, p
+F4			屬性視窗						
+F7			查看程式碼
