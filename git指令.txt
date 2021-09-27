@@ -1,0 +1,34 @@
+git config --global user.name "xxx"
+git config --global user.email "xxx@xxx.com.tw"
+
+git config --list
+
+
+.gitconfig路徑
+~/.gitconfig
+C:\Users\USER\.gitconfig
+
+
+git init
+
+git status
+
+git add xxx
+git add -all
+
+git commit -m "xxx"
+git commit --amend --no-edit	併入上一次的commit
+
+git log
+git log -p xxx		看xxx做什麼修改
+git log --oneline --graph
+git log --oneline --author="John\|Bill"
+
+git rm xxx
+git rm xxx --cached	某檔案不受git控管
+
+git mv xxx ooo		改名
+
+.gitignore
+https://github.com/github/gitignore
+
