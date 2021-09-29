@@ -32,3 +32,6 @@ git mv xxx ooo		改名
 .gitignore
 https://github.com/github/gitignore
 
+git blame xxx		查看是誰寫的
+git blame -L 5,10 xxx
+
