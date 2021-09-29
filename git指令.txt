@@ -23,6 +23,8 @@ git log
 git log -p xxx		看xxx做什麼修改
 git log --oneline --graph
 git log --oneline --author="John\|Bill"
+git log -g --oneline
+git reflog
 
 git rm xxx
 git rm xxx --cached	某檔案不受git控管
@@ -35,3 +37,11 @@ https://github.com/github/gitignore
 git blame xxx		查看是誰寫的
 git blame -L 5,10 xxx
 
+git checkout xxx	救回刪除檔案
+git checkout .		救回所有檔案
+
+git log --oneline
+git reset 3a0cdf4	前往3a0cdf4 commit版本
+
+git branch		查看分支
+git checkout xx		切換到xx分支
