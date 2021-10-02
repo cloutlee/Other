@@ -45,3 +45,8 @@ git reset 3a0cdf4	前往3a0cdf4 commit版本
 
 git branch		查看分支
 git checkout xx		切換到xx分支
+git checkout -b xxx	建立並切換到xxx分支
+
+git branch xxx		建立分支
+git branch -m xxx ooo	分支改名成ooo
+git branch -d ooo	刪除ooo分支
