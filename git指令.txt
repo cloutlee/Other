@@ -50,3 +50,6 @@ git checkout -b xxx	建立並切換到xxx分支
 git branch xxx		建立分支
 git branch -m xxx ooo	分支改名成ooo
 git branch -d ooo	刪除ooo分支
+
+git checkout master
+git merge xxx		mater合併xxx分支
