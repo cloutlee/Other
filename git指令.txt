@@ -82,4 +82,5 @@ git stash pop stash@{0}
 ¤â°Ê§R°£
 git stash drop stash@{0}
 
-git fetch
+git pull = git fetch + git merge
+
