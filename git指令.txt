@@ -52,4 +52,19 @@ git branch -m xxx ooo	分支改名成ooo
 git branch -d ooo	刪除ooo分支
 
 git checkout master
-git merge xxx		mater合併xxx分支
+git merge xxx		mater合併xxx分支，歷史紀錄平行
+
+強制刪除分支並救回
+git branch -D xxx
+git reflog
+git branch xxx_new a345s2f
+
+git rebase ooo		另一合併方式，歷史紀錄變一條
+git reset ORIG_HEAD --hard	取消rebase
+
+merge發生圖片衝突
+git merge xxx
+git checkout --ours abc.jpg
+或
+git checkout --theirs abc.jpg
+
