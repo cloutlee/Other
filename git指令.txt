@@ -68,3 +68,18 @@ git checkout --ours abc.jpg
 或
 git checkout --theirs abc.jpg
 
+git tag v1.0 42d57jt	建立標籤
+或
+git tag v1.0 42d57jt -a -m "new version"
+
+git tag -d v1.0		刪除標籤
+
+暫停目前工作，之後切回做
+git stash
+git stash list
+git stash pop stash@{0}
+
+手動刪除
+git stash drop stash@{0}
+
+git fetch
