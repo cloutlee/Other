@@ -2,6 +2,7 @@ git config --global user.name "xxx"
 git config --global user.email "xxx@xxx.com.tw"
 
 git config --list
+git config -l
 
 
 .gitconfig路徑
@@ -15,6 +16,7 @@ git status
 
 git add xxx
 git add --all
+git add .
 
 git commit -m "xxx"
 git commit --amend --no-edit	併入上一次的commit
