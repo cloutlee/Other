@@ -1,0 +1,148 @@
+倉庫(registry)放映像檔(image)，執行映像檔就變容器(container)
+
+看版本
+
+docker version
+
+docker-compose version
+
+
+
+執行
+
+docker run 映像檔名稱					建立並啟動容器
+
+docker run -d 映像檔名稱				背景執行container
+
+docker create -i -t --name container的Name image的Name	建立容器但不啟動
+
+docker start -i container的Name				啟動
+
+docker stop container的Name				停止
+
+
+
+列出正在運行的container
+
+docker container ls
+
+
+
+看狀態
+
+docker ps -a
+
+
+
+移除container
+
+docker rm container的Id			rm後可接 -f 代表強制刪除
+
+docker rm container的Name
+
+
+
+看本機image是否存在
+
+docker images xxx
+
+
+
+搜尋image
+
+docker search xxx
+
+
+
+下載image
+
+docker pull xxx
+
+
+
+移除image
+
+docker rmi xxx
+
+
+
+port forwarding			可改該container的port與實際機器對應的port
+
+docker run -d -p 8080:80 httpd		實際測試輸入localhost:8080 轉接到container的80 port
+
+
+
+進入container
+
+docker exec -it container的Name或Id /bin/bash
+
+
+
+bind mount			把實際目錄或檔案綁定在container裡
+
+docker run -d -v /path/to/local/folder:/app/folder my_image
+		  本機	  		容器	
+
+
+看所有volume
+
+docker volume ls
+
+
+建立
+
+docker volume create voo1
+
+
+看volume狀態
+
+docker volume inspect voo1
+
+
+連結
+
+docker run -d -p 8082:80 --name containerName -v v001:/var/www/aaa imageName
+
+
+刪除
+
+docker volume rm v001
+
+
+
+
+
+docker compose是組合多個container成為一個完整服務的工具
+建立docker-compose.yml並輸入docker-compose up執行
+
+
+docker-compose up -d		背景執行
+
+
+
+
+把舊的image變成新的image
+
+docker commit container的Name newimage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
