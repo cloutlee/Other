@@ -18,3 +18,23 @@ https://docs.oracle.com/javaee/6/tutorial/doc/bnayn.html
 
 https://morosedog.gitlab.io/springboot-20190417-springboot29/
 
+
+看web service的@ 都是javaEE的  javax.jws.WebService
+
+
+pom搜尋javax.jws或javax或jaxws-rt
+
+找@Endpoint 看import的地方  專案在spring下  還是boot
+
+cmd下 wsimport 讀wsdl產生java
+
+java ee的web service 用@WebService + @WebMethod
+
+spring的web service 用@Endpoint + @PayloadRoot
+
+
+用spring init產生一個spring boot有web service的專案
+
+
+
+
