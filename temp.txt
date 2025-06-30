@@ -19,14 +19,6 @@ https://docs.oracle.com/javaee/6/tutorial/doc/bnayn.html
 https://morosedog.gitlab.io/springboot-20190417-springboot29/
 
 
-看web service的@ 都是javaEE的  javax.jws.WebService
-
-
-pom搜尋javax.jws或javax或jaxws-rt
-
-找@Endpoint 看import的地方  專案在spring下  還是boot
-
-cmd下 wsimport 讀wsdl產生java
 
 java ee的web service 用@WebService + @WebMethod
 
@@ -37,4 +29,30 @@ spring的web service 用@Endpoint + @PayloadRoot
 
 
 
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class MyServiceTest {
+
+    @Autowired
+    private MyService myService;
+
+    @MockBean
+    private SomeDependency someDependency;  // 模擬依賴
+
+    @Test
+    public void testServiceMethod() {
+	assertNotNull(someService);
+    }
+
+    @Test
+    void testSomeService() {
+        // 模擬 someDependency 的行為
+        when(someDependency.someMethod()).thenReturn("Mocked Value");
+
+        String result = someService.doSomething();
+
+        assertEquals("Mocked Value", result);  // 驗證 someService 的行為
+    }
+}
 
