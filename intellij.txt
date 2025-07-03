@@ -1,0 +1,13 @@
+最近使用的檔案列表	ctrl + e
+複製			ctrl + d
+註解			ctrl + /
+刪除			ctrl + x
+排版			ctrl + alt + L
+全域搜尋		shift + shift
+找出變數或方法用在哪裡	alt + F7
+找檔案			ctrl + shift + n
+			ctrl + shift + f
+找類別			ctrl + n
+查當前文件有哪些方法屬性ctrl + F12
+返回/前往 上一次游標位置ctrl + alt + left / right
+替換			ctrl + shfit + r
