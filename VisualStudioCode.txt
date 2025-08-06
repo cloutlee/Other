@@ -1,0 +1,4 @@
+ctrl + + 放大ide
+
+ctrl + - 縮小ide
+
