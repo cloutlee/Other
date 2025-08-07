@@ -2,3 +2,22 @@ ctrl + + 放大ide
 
 ctrl + - 縮小ide
 
+crtl + shift + p 或 f1 開啟指令面板
+
+crtl + tab 切換開啟的檔案
+
+crtl + g 跳到某一行
+
+crtl + \ 把目前編輯器分為兩個
+
+ctrl + shift + f 跨檔案搜尋
+
+ctrl + shift + n 新增visual studio code視窗
+
+ctrl + w 關閉目前視窗
+
+
+
+shift + alt + 右鍵 列選擇
+
+shift + alt + f 格式化文件
