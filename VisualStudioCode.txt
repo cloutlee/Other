@@ -2,22 +2,50 @@ ctrl + + 放大ide
 
 ctrl + - 縮小ide
 
-crtl + shift + p 或 f1 開啟指令面板
-
-crtl + tab 切換開啟的檔案
+crtl + tab 或 crtl + p 切換開啟的檔案
 
 crtl + g 跳到某一行
 
 crtl + \ 把目前編輯器分為兩個
 
-ctrl + shift + f 跨檔案搜尋
+crtl + / 註釋
 
-ctrl + shift + n 新增visual studio code視窗
+crtl + o 開啟檔案
+
+crtl + n 新增檔案
+
+crtl + f 搜尋
+
+ctrl + h 取代
 
 ctrl + w 關閉目前視窗
 
+ctrl + ` 開啟終端機
 
+ctrl + shift + ` 建立並開啟新的終端機
+
+ctrl + shift + f 跨檔案搜尋
+
+ctrl + shift + h 全域取代
+
+ctrl + shift + n 新增visual studio code視窗
+
+crtl + shift + p 或 f1 開啟指令面板
+
+ctrl + shift + k 刪除目前行
+
+
+
+alt + < (上下左右鍵的左鍵)或 >   向後或向前跳躍
+
+alt + ↑或↓ 把目前行的內容向上或下移動
+
+
+shift + alt + ↑或↓ 把目前行的內容向上或下複製
 
 shift + alt + 右鍵 列選擇
 
 shift + alt + f 格式化文件
+
+
+
