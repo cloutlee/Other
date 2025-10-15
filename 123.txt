@@ -1,0 +1,137 @@
+﻿Hi everyone, my name is Daniel Wong and I will be presenting my final project for this
+course, data synthesis and segmentation for midline shift.
+First of all, I'll be introducing some concepts that help us understand what is the midline
+shift.
+So the center line of the brain is just the center axis of the skull that's split into
+two symmetric parts.
+You can think of this as the center line or the half line of the image.
+And you have the midline of the brain, which is the line that separates the left brain
+tissue and right brain tissue.
+Usually the center line and the midline of the brain overlaps.
+That is because your left brain tissue and right brain tissue have similar size and shape,
+but that's not always the case.
+And when that happens, it actually is called a midline shift.
+So as you can see in this example, the left brain is expanding and is pushing, squeezing
+the right brain to the right.
+And the midline has therefore a rightward shift.
+But the skull stays the same.
+So the center line stays the same.
+And you can see there's a huge or significant displacement or shift between the midline
+and the center line.
+A midline shift is usually caused by a traumatic brain injury or stroke.
+And almost always a midline shift leads to a high brain pressure or high ICP.
+And a high ICP actually, as a matter of fact, the standard measurement of ICP is the magnitude
+of the midline shift.
+A high ICP usually leads to a distortion of brain stems and restricted blood flows, which
+could lead to seizure or coma that has serious effects and potentially deadly illnesses.
+Another aspect of the midline shift is that it requires immediate treatment.
+So according to the physician I shadowed, there's so 99 times out of 100, if you are
+like if you're found that has a midline shift, you will be on your way to the OR for surgery.
+Some of the difficulty for midline shift analysis and detection is that it is relatively very
+small.
+So it starts from three millimeters.
+And there is very few available data sets for analysis on the web or publicly available.
+And also it's extremely time sensitive because it relates to potentially like then deadly
+conditions.
+So my project, which consists of two parts, actually deal with those problems.
+So for the first part of my project, which is data synthesis, it deals with the lack
+of data set issue.
+So we want to synthesize actual midline shift images and provide a comprehensive and large
+data set for analysis.
+And the second part of my project is the modeling part, which deal with the time sensitive issue.
+We want to create a automated midline shift detection and alert system that could tell
+the physician and the surgeons as a condition of the patient right after the image was taken.
+And here is the pipeline for design.
+First part of data synthesis part, you have the data source and then I used two different
+packages, PyTorch and Manai to synthesize data.
+And the process is pretty easy.
+It's just loading the image, expanding it, resizing it to perform some padding.
+And then you use perform some transformation using either Torch version or transforms.
+And then you visualize it and see how you do.
+So the most important part in here is the insight you gather from the actual midline
+shift images.
+And I gather those insights by actually analyzing the actual midline shift images and reading
+papers about them.
+And that gives us an idea of what function I need to call, what performance, what kind
+of transformation I need to use.
+And this is the pipeline for the second part of the modeling part.
+We have the original data, which has no shift, and we have the synthetic data, which has
+customized shift.
+And those are the variables or the X values of our model.
+And we want to perform a simple left brain segmentation on those image.
+And we use those segmentation as the true values or the Y values of our model.
+This is because as long as we have a left brain segmentation, we can find the boundary
+of left brain and the overlaps between the boundary of left brain and the boundary of
+right brain is our midline.
+So this is the left brain, this is the boundary of left brain, and here is we have the midline.
+So once we have that, we want to perform a quick resample, and then we put it into an
+image to image unit.
+And then we have our predicted left brain segmentation.
+And using that segmentation, we could find the actual midline, actual predicted midline.
+And then we use that midline to perform result analysis and visualization.
+Some of the challenges I encountered during the process.
+So for the first part, data synthesis part is the method of transformation.
+As I mentioned, the insight is very important.
+You need to know what type of transformation you want to use.
+And for each transformation, you have tons of variables, right?
+And you need to choose the ideal parameters or variables you want to use and perform.
+So for example, those are ideal transformations and those are not.
+For example, this one you can see the skull is kind of fractured.
+The challenges I faced for the second part is the ratio of the original data and the
+synthetic data.
+Because you don't want it to be like 100-0 or 50-50.
+Because in real life, you are going to encounter more original data than the synthetic data.
+Or some more image with no shift than image with shift.
+But you do want your model to be occupied with all the original data, then your model
+won't be learning about midline shift detection.
+So it's important to balance data set into something like 2080 or 3070.
+Here is the result for the data synthesis part.
+This is the sample data that has a shift of 7.5 millimeters.
+As you can see, some of them has a very visible shift, like this one and this one.
+And some of them, the shift is not that visible.
+But if you see carefully, you can see there is still a tiny shift.
+And that is what we are looking for.
+And this is the result for shift equal to 15 millimeters.
+As you can see, those are very drastic shifts.
+And some of them is a little bit extreme.
+But overall, I think it's better than what I thought it could be.
+So those actually is very similar to the image of an actual midline shift.
+And some of the quantitative ways to figure out how I did in terms of synthetic data is
+the fidelity metric.
+But it requires a pre-trained model, which is not publicly available right now.
+So I came up with my own kind of metric, which is called satisfactory rate.
+So basically, I rate my images based on those criteria.
+So does it have a visible shift?
+Does it have a scar changes?
+Does it have a visible glitch or disconnected tissues?
+And based on that, here is the result.
+For example, the 75 millimeters shift has a 0.95 satisfactory rate, which means that 95%
+of the images is satisfactory.
+And the result for the second part, the modeling part, is I have a dice score of 0.948, which
+is extremely inflated.
+So the idea is that the output of the modeling is the left-brain segmentation, which is the
+image, right?
+And once you have an image, the first thing you do is to compute the dice score.
+And here is the output.
+The right one is the output of the model.
+And this blue one is the actual left-brain.
+And this blue one is the true value of the left segmentation.
+So this one is after transformation.
+This one is before transformation.
+As you can see, it overlaps greatly.
+So as I mentioned, this is very high.
+And this is probably because the large segmentation size and the small midline shift magnitude.
+So what I propose is to change the output image into a boolean or into a float, right?
+Into a boolean, such as whether it has shift or not.
+And it will float to such as what is the actual shift magnitude.
+And you use the matrix according to, associated with, to boolean and float to actually give
+us a better understanding of the performance of the model.
+For example, accuracy of F1 score or MSSE.
+And those, I'm still coding on those and I hope I have a result when I actually do prevent.
+So quick recap.
+I created an algorithm to synthesize the midline shift brain scans.
+I created a midline shift dataset with comparison.
+I applied the UNET to midline shift detection and this serves as a proof of concept for real-time
+midline shift detection and alert brain scans.
+That's all for my projects.
+Thank you guys for listening.
