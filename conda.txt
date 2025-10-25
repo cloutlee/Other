@@ -2,11 +2,11 @@ conda env list
 
 conda create --name myenv python=3.5
 
-activate myenv
+conda activate myenv
 
 conda list
 
-deactivate
+conda deactivate
 
 conda env remove --name myenv
 
