@@ -1,0 +1,21 @@
+conda env list
+
+conda create --name myenv python=3.5
+
+activate myenv
+
+conda list
+
+deactivate
+
+conda env remove --name myenv
+
+
+
+
+
+
+
+
+
+
